@@ -1,4 +1,4 @@
-# Safe Out
+# Dev Quiz
 ## Introduction
 This is a school project that I made.
 We had to make a development quiz were we had to fetch questions from an API.
