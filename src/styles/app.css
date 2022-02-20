@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--body-background-color);
+    color: var(--primary-text-color);
+	font-family: 'Nunito', sans-serif;
+}
+
+#app {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+	padding: 1.5rem;
+}
+
+h1 {
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
+}
+
+#loader {
+	border: .5rem solid transparent;
+	border-radius: 50%;
+	border-top: .5rem solid var(--primary-color);
+	width: 5rem;
+	height: 5rem;
+	animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.categories_container, .difficulties_container, .amount_container, .choice_container {
+	width: 100%;
+}
+
+.select_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+	
+}
+
+.choice_container {
+	margin-top: 2.5rem;
+}
+
+.radio {
+	flex-grow: 1;
+	flex-basis: 80px;
+	margin: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	display: none;
+}
+
+label {
+	position: relative;
+	text-align: center;
+	height: 50px;
+	border: 2px solid var(--secondary-color);
+	flex-grow: 1;
+	border-radius: 16px;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--secondary-color);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#smallerText {
+	font-size: 14px;
+}
+
+input[type="radio"]:checked + label , input[type="checkbox"]:checked + label{
+	border-color: var(--primary-color);
+	color: var(--primary-color);
+}
+
+input[type="range"] {
+	margin-top: 10px;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 12px;
+	background: var(--secondary-color);
+	outline: none;
+	border-radius: 50px;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background: var(--primary-color);
+	border-radius: 50%;
+	cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+	width: 30px;
+	height: 30px;
+	background: var(--primary-color);
+	border-radius: 50%;
+	cursor: pointer;
+}
+input[type="range"]::-ms-thumb {
+	width: 30px;
+	height: 30px;
+	background: var(--primary-color);
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+p#rangeValue {
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+
+
+
+button {
+	background-color: var(--primary-color);
+	border: none;
+	color: var(--white);
+	text-align: center;
+	font-size: 28px;
+	width: 250px;
+	padding: 15px;
+	font-weight: bold;
+	border-radius: 30px;
+	margin-top: 40px;
+	cursor: pointer;
+
+}
+
+.header {
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	width: 100%;
+}
+
+
+.progress {
+	margin-top: 4rem;
+	padding: 0 1.5rem;
+	width: 100%;
+}
+
+#progressText {
+	color: var(--secondary-color);
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#progressBar {
+	width: 100%;
+	height: .5rem;
+	background-color: var(--secondary-color);
+	border-radius: 50px;
+	overflow: hidden;
+	margin-top: -8px;
+}
+
+#progressCurrent {
+	height: 100%;
+	background-color: var(--primary-color);
+	width: 10%;					/* NOG VERANDEREN IN JS */
+	border-radius: 50px;
+}
+
+#question {
+	text-align: left;
+	font-size: 20px;
+	margin-top: 2rem;
+	padding: 0 1.5rem;
+}
+
+#checkboxText {
+	text-align: left;
+	font-size: 12px;
+	padding: 0 1.5rem;
+	width: 100%;
+	font-weight: bold;
+	color: var(--orange);
+}
+
+.choice label {
+	padding: 1rem;
+	font-size: 14px;
+	color: var(--white);
+	height: auto;
+	text-align: left;
+	width: 100%;
+	justify-content: flex-start;
+	margin-bottom: .5rem;
+	border-radius: 20px;
+}
+
+.btn-next {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	bottom: 5.5rem;
+	margin-top: 0;
+}
+
+input[class="radio-question"]:checked + label, input[class="checkbox-question"]:checked + label {
+	border-color: var(--primary-color);
+	background-color: var(--primary-darker);
+	color: var(--white);
+}
+
+.hide {
+	display: none;
+}
+
+.timer {
+	margin-top: 1.2rem;
+	width: 100%;
+	height: 6px;
+	position: absolute;
+	bottom: 0;
+}
+
+#timer_bar {
+	background-color: var(--orange);
+	height: 6px;
+}
+
+.homeBtn {
+	color: var(--soft-blue);
+	position: absolute;
+	top: 2rem;
+	right: 1.5rem;
+	z-index: 10;
+	font-size: 20px;
+	border: 2px solid var(--soft-blue);
+	border-radius: 10px;
+	padding: 7px 15px;
+}
+
+.score_container {
+	position: absolute;
+	top: 4rem;
+	padding: 0 1.5rem;
+}
+
+.score {
+	width: 100%;
+	text-align: center;
+}
+
+#scoreText {
+	color: var(--secondary-color);
+	font-weight: bold;
+	margin-bottom: -1.4rem;
+}
+
+#score {
+	font-size: 32px;
+}
+
+.result_card {
+	border: 2px solid var(--secondary-color);
+	font-weight: bold;
+	padding: 1rem;
+	font-size: 14px;
+	color: var(--white);
+	text-align: left;
+	width: 100%;
+	margin-bottom: .5rem;
+	border-radius: 20px;
+	padding-bottom: .5rem;
+}
+
+.correct {
+	border-color: var(--green);
+}
+
+.wrong {
+	border-color: var(--red);
+}
+
+.result_card h2 {
+	font-size: 16px;
+	margin-bottom: 1.5rem;
+}
+
+.result_card p {
+	color: var(--secondary-color);
+}
+
+.result_card ul {
+	margin-bottom: 1.5rem;
+	margin-top: -.5rem;
+}
+
+#homeBtn {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5.5rem;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	#app {
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	.progress {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#question {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#checkboxText {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.score_container {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media only screen and (max-height: 700px) {
+	h1 {
+		font-size: 18px;
+	}
+
+	label {
+		font-size: 14px;
+		height: 35px;
+		border-radius: 12px;
+	}
+
+	#smallerText {
+		font-size: 10px;
+	}
+
+	p#rangeValue {
+		font-size: 16px;
+	}
+
+	input[type="range"] {
+		height: 8px;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		width: 20px;
+		height: 20px;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		width: 20px;
+		height: 20px;
+	}
+
+	input[type="range"]::-ms-thumb {
+		width: 20px;
+		height: 20px;
+	}
+
+	button {
+		font-size: 20px;
+		width: 190px;
+	}
+
+	.homeBtn {
+		font-size: 16px;
+		padding: 5px 12px;
+	}
+
+	.progress {
+		margin-top: 3rem;
+	}
+
+	#progressText {
+		font-size: 12px;
+	}
+
+	#question {
+		font-size: 16px;
+		margin-top: 1rem;
+	}
+
+	#checkboxText {
+		font-size: 10px;
+	}
+
+	.choice label {
+		font-size: 12px;
+		padding: .7rem;
+	}
+
+	.choice_container {
+		margin-top: 4.5rem;
+	}
+
+	.btn-next {
+		bottom: 2rem;
+	}
+
+	.score_container {
+		top: 2rem;
+	}
+
+	#scoreText {
+		font-size: 14px;
+		margin-bottom: -.8rem;
+	}
+
+	#score {
+		font-size: 24px;
+	}
+
+	.result_card {
+		font-size: 12px;
+		padding: .7rem;
+	}
+
+	.result_card h2 {
+		font-size: 14px;
+	}
+
+	#homeBtn {
+		margin-bottom: 3rem;
+	}
+}

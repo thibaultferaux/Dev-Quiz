@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <title></title>
+</head>
+
+<body>
+  <div id="app">
+    <div id="loader" class="hide"></div>
+    <div class="categories_container">
+      <h1>Category</h1>
+      <div class="select_container">
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="code" id="code" checked>
+          <label for="code">Code</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="sql" id="sql">
+          <label for="sql">SQL</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="bash" id="bash">
+          <label for="bash">Bash</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="linux" id="linux">
+          <label for="linux">Linux</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="devops" id="devops">
+          <label for="devops">DevOps</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="cms" id="cms">
+          <label for="cms">CMS</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="docker" id="docker">
+          <label for="docker">Docker</label>
+        </div>
+
+        <div class="radio">
+          <input class="radio-category" type="radio" name="category" value="" id="all">
+          <label for="all">All</label>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="difficulties_container">
+      <h1>Difficulty</h1>
+      <div class="select_container">
+        <div class="radio">
+          <input class="radio-difficulty" type="radio" name="difficulty" value="easy" id="easy" checked>
+          <label for="easy">Easy</label>
+        </div>
+        <div class="radio">
+          <input class="radio-difficulty" type="radio" name="difficulty" value="medium" id="medium">
+          <label for="medium">Medium</label>
+        </div>
+        <div class="radio">
+          <input class="radio-difficulty" type="radio" name="difficulty" value="hard" id="hard">
+          <label for="hard">Hard</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="amount_container">
+      <h1>Number of questions</h1>
+      <div class="amount_of_questions">
+        <input type="range" name="amount" id="amount" min="5" max="15" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">10</p>
+      </div>
+    </div>
+
+
+    <div class="button">
+      <button id="play-button">Start</button>
+    </div>
+
+
+
+
+
+  </div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>
